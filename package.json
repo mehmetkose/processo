@@ -1,0 +1,62 @@
+{
+  "name": "processo",
+  "version": "1.0.0",
+  "description": "a module for get to know which platform inside your hybrid app running.",
+  "main": "./lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-register --recursive",
+    "test:watch": "npm test -- --watch",
+    "test:examples": "node examples/",
+    "cover": "cross-env BABEL_ENV=commonjs istanbul cover _mocha -- --compilers js:babel-register --recursive",
+    "lint": "eslint src test",
+    "build": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "prepublish": "npm run clean && npm run lint && npm run test && npm run build"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehmetkose/processo.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "npm",
+    "module",
+    "node",
+    "javascript"
+  ],
+  "author": "Mehmet mehmet.kose122@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mehmetkose/processo/issues"
+  },
+  "homepage": "https://github.com/mehmetkose/processo#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.14.0",
+    "babel-eslint": "^7.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-2": "^6.13.0",
+    "chai": "^3.5.0",
+    "cross-env": "^3.0.0",
+    "eslint": "^3.6.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^6.3.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "flow-remove-types": "^1.2.3",
+    "istanbul": "^1.0.0-alpha",
+    "mocha": "^3.0.2",
+    "reify": "^0.13.7",
+    "rimraf": "^2.5.4"
+  }
+}
